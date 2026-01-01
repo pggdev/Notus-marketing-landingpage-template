@@ -37,7 +37,7 @@ export const BenGrid = () => {
 
             <div className="flex flex-col gap-5">
 
-                {gridOne.map((items, index) => <FeatureCard key={index} icon={items.icon} title={items.title} subheading={items.subheading} />)}
+                {gridOne.map((items, index) => <FeatureCard varient={"normal"} key={index} icon={items.icon} title={items.title} subheading={items.subheading} />)}
 
             </div>
             <div className="">
@@ -47,7 +47,7 @@ export const BenGrid = () => {
             </div>
             <div className="flex flex-col gap-5">
 
-                {gridOne.map((items, index) => <FeatureCard key={index} icon={items.icon} title={items.title} subheading={items.subheading} />)}
+                {gridOne.map((items, index) => <FeatureCard varient="normal" key={index} icon={items.icon} title={items.title} subheading={items.subheading} />)}
 
             </div>
 

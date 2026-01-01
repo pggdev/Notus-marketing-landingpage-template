@@ -47,12 +47,12 @@ export const Grid = () => {
 
         <div className="flex flex-col gap-10">
             <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
-                {gridOne.map((items, index) => <FeatureCard key={index} icon={items.icon} title={items.title} subheading={items.subheading} />)}
+                {gridOne.map((items, index) => <FeatureCard varient={"pattern"} key={index} icon={items.icon} title={items.title} subheading={items.subheading} />)}
 
 
             </div>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
-                {gridTwo.map((items, index) => <FeatureCard key={index} icon={items.icon} title={items.title} subheading={items.subheading} />)}
+                {gridTwo.map((items, index) => <FeatureCard varient={"pattern"} key={index} icon={items.icon} title={items.title} subheading={items.subheading} />)}
 
 
             </div>

@@ -1,6 +1,6 @@
 import { Container } from "@/app/components/containerbox"
 import { Subheading } from "@/app/components/subheading"
-import { IconBrain, IconRuler3, IconFingerprint, IconRefresh, IconRouteSquare } from "@tabler/icons-react"
+import { IconBrain, IconRuler3, IconFingerprint, IconRefresh, IconRouteSquare, IconBrandOpenai } from "@tabler/icons-react"
 import { Card } from "@/app/components/features/card"
 import { InrCard1 } from "./openAicard"
 import { Balls } from "./balls"
@@ -63,7 +63,7 @@ export const Feature = () => {
 
                         </div>
 
-                        <InrCard1 className="absolute right-10" />
+                        <InrCard1 className="absolute right-10" icon={<IconBrandOpenai className="size-4" />} title={"Open AI"} desc="GPT5 " badge={<Fbadge varient="blue">Connected</Fbadge >} />
 
 
                     </Card>

@@ -6,6 +6,8 @@ import { UseCases } from "./section/useCases";
 import { Benefits } from "./section/benefits";
 import { Testimonials } from "./section/testimonials";
 import { Integrate } from "./section/howitworks";
+import { Pricing } from "./section/pricing";
+
 export default function Home() {
   return (
     <div>
@@ -16,6 +18,7 @@ export default function Home() {
       <UseCases />
       <Benefits />
       <Testimonials />
+      <Pricing />
     </div>
   );
 }

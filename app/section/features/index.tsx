@@ -7,6 +7,7 @@ import { Balls } from "./balls"
 import { Fbadge } from "./badge"
 import { Modellist } from "./card1/modellist"
 import { Card3 } from "./card3"
+import { Chatbox } from "@/app/components/features/chatbox"
 
 export const Feature = () => {
     return <div className="border-y border-neutral-200 ">
@@ -83,8 +84,9 @@ export const Feature = () => {
                         </Subheading>
                     </div>
 
-                    <Card className="">
-                        <div className="">
+                    <Card >
+                        <div className="h-full">
+                            <Chatbox />
 
                         </div>
                     </Card>

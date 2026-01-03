@@ -69,12 +69,12 @@ export const Integrate = () => {
 
     }
 
-    // useEffect(() => {
-    //     startAutoplay()
+    useEffect(() => {
+        startAutoplay()
 
-    //     return () => stopAutoplay()
+        return () => stopAutoplay()
 
-    // }, [])
+    }, [])
 
 
 

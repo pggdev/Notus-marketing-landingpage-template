@@ -43,15 +43,15 @@ const Growth = [
 
 
 export const Pricingfeatures = () => {
-    return <div>
+    return <div className="border-b border-neutral-200">
         <Container>
             <div>
-                <div className="hidden md:grid grid-cols-3 divide-x divide-neutral-200">
+                <div className="hidden md:grid grid-cols-3 border-x border-neutral-200 divide-x divide-neutral-200">
                     <Card className="h-115">
                         <div className="h-full">
 
                             <div className="p-10">
-                                {Growth.map((items, index) => <Feature icon={items.icon} heading={items.heading} />)}
+                                {Growth.map((items, index) => <Feature key={index} icon={items.icon} heading={items.heading} />)}
 
                             </div>
 

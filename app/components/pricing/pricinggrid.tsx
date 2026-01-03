@@ -7,7 +7,18 @@ import { cn } from "@/app/lib/utils"
 import { useState } from "react"
 
 
-export const Pricinggrid = () => {
+const Pricingsection = () => {
+    const [selectedTab, setSelectedTab] = useState<'monthly' | 'yearly'>('monthly')
+    return <div>
+        <Pricinggrid selectedTab={selectedTab} setSelectedTab={setSelectedTab} />
+        <Pricingtoggle selectedTab={selectedTab} setSelectedTab={setSelectedTab} />
+
+    </div>
+}
+
+
+
+export const Pricinggrid = ({ selectedTab, setSelectedTab }: { selectedTab: "monthly" | "yearly", setSelectedTab: React.Dispatch<React.SetStateAction<'monthly' | 'yearly'>>; }) => {
     return <div>
         <div className="border-b border-neutral-200">
             <Container className="border-x border-neutral-200">
@@ -21,7 +32,8 @@ export const Pricinggrid = () => {
                             </div>
 
 
-                            <h1 className="text-[28px] ">$8 <span className="text-sm">/seat</span></h1>
+                            {selectedTab === "monthly" && <h1 className="text-[28px] ">$8 <span className="text-sm">/seat</span></h1>}
+                            {selectedTab === "yearly" && <h1 className="text-[28px] ">$80 <span className="text-sm">/seat</span></h1>}
 
 
                             <Btn varient="secondary" className="w-full bg-white"> Start Building</Btn>
@@ -36,7 +48,8 @@ export const Pricinggrid = () => {
                             </div>
 
 
-                            <h1 className="text-[28px] ">$12 <span className="text-sm">/seat</span></h1>
+                            {selectedTab === "monthly" && <h1 className="text-[28px] ">$12 <span className="text-sm">/seat</span></h1>}
+                            {selectedTab === "yearly" && <h1 className="text-[28px] ">$120 <span className="text-sm">/seat</span></h1>}
 
 
                             <Btn varient="primary" className="w-full bg-primary"> Start for free</Btn>
@@ -52,7 +65,8 @@ export const Pricinggrid = () => {
                             </div>
 
 
-                            <h1 className="text-[28px] ">$25 <span className="text-sm">/seat</span></h1>
+                            {selectedTab === "monthly" && <h1 className="text-[28px] ">$25 <span className="text-sm">/seat</span></h1>}
+                            {selectedTab === "yearly" && <h1 className="text-[28px] ">$250 <span className="text-sm">/seat</span></h1>}
 
 
                             <Btn varient="secondary" className="w-full bg-white"> Contact Sales</Btn>
@@ -75,8 +89,8 @@ export const Pricinggrid = () => {
 
 
 
-export const Pricingtoggle = () => {
-    const [selectedTab, setSelectedTab] = useState<'monthly' | 'yearly'>('monthly')
+export const Pricingtoggle = ({ selectedTab, setSelectedTab }: { selectedTab: "monthly" | "yearly", setSelectedTab: React.Dispatch<React.SetStateAction<'monthly' | 'yearly'>>; }) => {
+
 
 
     return <div>
@@ -92,10 +106,10 @@ export const Pricingtoggle = () => {
                 )}>
                 </div>
 
-                <div className="flex justify-center z-20 cursor-pointer" onClick={() => setSelectedTab('first')}>
+                <div className="flex justify-center z-20 cursor-pointer" onClick={() => setSelectedTab('monthly')}>
                     <h1>Monthly</h1>
                 </div>
-                <div className="flex justify-center items-center z-20 gap-2 cursor-pointer" onClick={() => setSelectedTab('second')}>
+                <div className="flex justify-center items-center z-20 gap-2 cursor-pointer" onClick={() => setSelectedTab('yearly')}>
                     Yearly
                     <div className="flex gap-1 items-center rounded-xl px-2 py-[4px] bg-red-50">
                         <h2 className="text-red-500 text-xs">save</h2>

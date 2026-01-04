@@ -11,8 +11,34 @@
   --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
-  --color-primary: var(--text-color)
+  --color-primary: var(--text-color);
+
+
+  --animate-orbit: orbit var(--duration) linear infinite;
+
+  @keyframes orbit {
+
+    0% {
+      transform: rotate(0deg) translate(var(--translate-position)) rotate(0deg);
+    }
+
+
+    100% {
+      transform: rotate(360deg) translate(var(--translate-position)) rotate(-360deg);
+    }
+  }
+
+
+
+
+
 }
+
+
+
+
+
+
 
 @media (prefers-color-scheme: dark) {
   :root {

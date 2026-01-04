@@ -45,7 +45,7 @@ export const Faqgrid = () => {
 const Faqcard = ({ heading, desc }: { heading?: string, desc?: string }) => {
     const [isOpen, setisOpen] = useState<true | false>(false)
     return <div>
-        <div className="px-10 py-6 flex flex-col  border-x border-b border-neutral-200 ">
+        <div className="px-10 py-6 flex flex-col  border-x border-b border-neutral-200 " >
 
             <div className="flex justify-between items-center">
                 <h1 className="text-md"> {heading}</h1>

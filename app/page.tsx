@@ -9,7 +9,8 @@ import { Integrate } from "./section/howitworks";
 import { Pricing } from "./section/pricing";
 import { Security } from "./section/benefits/security";
 import { Faqs } from "./section/FAQ";
-
+import { Cta } from "./section/cta";
+import { Footer } from "./section/footer";
 export default function Home() {
   return (
     <div>
@@ -23,6 +24,8 @@ export default function Home() {
       <Pricing />
       <Security />
       <Faqs />
+      <Cta />
+      <Footer />
     </div>
   );
 }

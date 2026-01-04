@@ -23,6 +23,7 @@ export const Chatbox = () => {
     const InputRef = useRef(null)
     const [messages, setmessages] = useState<Msg[]>([])
 
+
     const msghandler = () => {
         //@ts-ignore
         if (InputRef.current && InputRef.current.value !== "") {
@@ -45,7 +46,6 @@ export const Chatbox = () => {
 
         <button className="p-1 border border-neutral-200" onClick={msghandler}>submit</button>
         {messages.map((items, index) => <h1 key={index}>{items.msg}</h1>)}
-        {messages !== [] && <div> hi there</div>}
 
 
 

@@ -11,11 +11,15 @@ import { Security } from "./section/benefits/security";
 import { Faqs } from "./section/FAQ";
 import { Cta } from "./section/cta";
 import { Footer } from "./section/footer";
+import { Dashboard } from "./section/dashboard";
+import { Topgrid } from "./section/topgrid";
 export default function Home() {
   return (
     <div>
       <Navbar />
       <Hero />
+      <Dashboard />
+      <Topgrid />
       <Integrate />
       <Feature />
       <UseCases />
@@ -26,6 +30,7 @@ export default function Home() {
       <Faqs />
       <Cta />
       <Footer />
+
     </div>
   );
 }

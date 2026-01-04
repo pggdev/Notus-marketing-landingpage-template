@@ -137,7 +137,7 @@ const Footergrid = () => {
 export const EmailSubscription = () => {
     return <div>
 
-        <div className="flex justify-between px-2 py-1 rounded-xl bg-neutral-100 border border-neutral-300 w-70  ">
+        <div className="flex justify-between pl-2 pr-1 py-1 rounded-xl bg-neutral-100 border border-neutral-300 w-70  ">
 
             <input type="email" placeholder="Your Email" className="outline-none placeholder:text-sm w-full" />
             <button className="bg-black p-2 rounded-lg">

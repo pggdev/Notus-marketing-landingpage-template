@@ -85,10 +85,32 @@ export const Feature = () => {
                     </div>
 
                     <Card >
-                        <div className="h-full">
-                            <Chatbox />
+                        <div className="max-w-[75%] h-[85%] absolute bottom-0 inset-x-0 mx-auto w-full border-t border-neutral-100 shadow-xl rounded-t-xl ">
+
+                            <div className="py-4 px-4">
+                                <Balls />
+
+                                <div className="mt-12 flex items-center gap-2 pb-2 border-b border-neutral-300">
+                                    <IconRuler3 className="size-4" />
+                                    <h1 className="text-sm"> All Models</h1>
+                                    <Fbadge varient="neutral" className="font-light " >69,420</Fbadge >
+
+                                </div>
+                                <div className="mt-4">
+                                    <Modellist />
+
+
+                                </div>
+
+
+
+                            </div>
+
+
 
                         </div>
+
+                        <InrCard1 className="absolute right-10" icon={<IconBrandOpenai className="size-4" />} title={"Open AI"} desc="GPT5 " badge={<Fbadge varient="blue">Connected</Fbadge >} />
                     </Card>
 
 

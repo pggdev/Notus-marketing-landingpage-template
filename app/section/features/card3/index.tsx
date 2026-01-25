@@ -8,9 +8,7 @@ export const Card3 = () => {
 
 
         <div className="absolute inset-0 -left-10 top-[50%] w-full -z-10 ">
-            <svg width="100%" height="1" viewBox="0 0 565 1" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M0 0.5H56005yu" stroke="#CFCFCF" />
-            </svg>
+
 
         </div>
 

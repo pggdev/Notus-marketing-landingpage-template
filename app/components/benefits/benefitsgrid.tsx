@@ -6,6 +6,7 @@ import { IconCard } from "@/app/section/features/card3/iconCard"
 import { Fbadge } from "@/app/section/features/badge"
 import { Balls } from "@/app/section/features/balls"
 import { cn } from "@/app/lib/utils"
+import { Topsvg } from "@/app/section/benefits/svgs/svgs"
 
 
 
@@ -66,19 +67,20 @@ const Midcard = () => {
             <div className="bg-neutral-50 rounded-xl h-full" >
                 <div className="h-[50%] flex justify-center items-center px-6 relative">
 
-                    <div className=" flex justify-between w-full items-center ">
-                        <div>
+                    <div className=" flex justify-between w-full items-center relative">
+                        <div className="z-10">
                             <IconCard icon={<IconBrandOpenai />} className="shadow-md" />
                         </div>
-                        <div className=" size-17  rounded-md p-px flex justify-center items-center overflow-hidden relative">
+                        <div className="absolute inset-0 flex items-center justify-center pointer-events-none"><Topsvg /></div>
+                        <div className=" size-17 z-10 rounded-md p-px flex justify-center items-center overflow-hidden relative z-10">
 
-                            <div className="w-full h-full absolute inset-0 [background-image:conic-gradient(from_0deg_at_50%_50%,transparent_0deg,#3b82f6_72deg,transparent_108deg)] scale-[1.4] animate-spin "></div>
-                            <div className="w-full h-full absolute inset-0 [background-image:conic-gradient(from_0deg_at_50%_50%,transparent_0deg,#f17463_72deg,transparent_108deg)] scale-[1.4] animate-spin [animation-delay:1.4s]"></div>
+                            <div className="w-full h-full absolute inset-0 [background-image:conic-gradient(from_0deg_at_50%_50%,transparent_0deg,#3b82f6_72deg,transparent_108deg)] scale-[1.4] animate-spin [animation-duration:1.5s]"></div>
+                            <div className="w-full h-full absolute inset-0 [background-image:conic-gradient(from_0deg_at_50%_50%,transparent_0deg,#f17463_72deg,transparent_108deg)] scale-[1.4] animate-spin [animation-delay:0.75s] [animation-duration:1.5s]"></div>
                             <IconCard icon={<IconCircle />} className=" p-5 rounded-[3px] z-20 " />
 
 
                         </div>
-                        <div>
+                        <div className="z-10">
                             <IconCard icon={<IconBrandSlack />} className="shadow-md" />
                         </div>
                     </div>

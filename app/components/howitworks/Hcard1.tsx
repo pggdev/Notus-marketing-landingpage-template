@@ -16,48 +16,77 @@ const Carditems = [
 ]
 
 
+const containerVariants = {
+    hidden: {},
+    visible: {
+        transition: {
+            staggerChildren: 0.2,
+        },
+    },
+};
+
+const itemVariants = {
+    hidden: {
+        opacity: 0,
+        y: -10,
+        filter: "blur(8px)"
+    },
+    visible: {
+        opacity: 1,
+        y: 0,
+        filter: "blur(0px)",
+        transition: {
+            duration: 0.4
+        }
+    },
+};
+
+
 export const Hcard1 = () => {
     return <div>
 
         <Card className="h-110">
 
-            <div className="h-full flex justify-center items-center ">
+            <motion.div
+                variants={containerVariants}
+                initial="hidden"
+                animate="visible"
+                className="h-full flex justify-center items-center ">
 
-                <div className="flex justify-center absolute top-15">
+                <motion.div
+                    variants={itemVariants}
+
+                    className="flex justify-center absolute top-15">
                     <InrCard1 icon={<IconBrandOpenai className="size-4" />} title={"Open AI"} desc="GPT5 " badge={<Fbadge varient="blue">Connected</Fbadge >} />
 
-                </div>
+                </motion.div>
 
-                <div className=" grid grid-cols-3 gap-2 px-1 pt-25">
-                    <div className=" mx-auto">
-
-
+                <motion.div
+                    variants={containerVariants}
+                    initial="hidden"
+                    animate="visible"
+                    className=" grid grid-cols-3 gap-2 px-1 pt-25">
+                    <motion.div
+                        variants={itemVariants}
+                        className=" mx-auto">
                         <InrCard1 icon={<IconBrandAdobe className="size-4 text-primary" />} title={"Anthorpic"} desc="Claude 4 " badge={<Fbadge varient="red">Generator</Fbadge >} />
-
-
-                    </div>
-                    <div className=" mx-auto">
-
-
+                    </motion.div>
+                    <motion.div
+                        variants={itemVariants}
+                        className=" mx-auto">
                         <InrCard1 icon={<IconBrandMeta className="size-4 text-blue-500" />} title={"Meta"} desc="llama 2" badge={<Fbadge varient="blue">Text Generator</Fbadge >} />
-
-
-                    </div>
-                    <div className=" mx-auto">
-
-
+                    </motion.div>
+                    <motion.div
+                        variants={itemVariants}
+                        className=" mx-auto">
                         <InrCard1 icon={<IconBrandOpenai className="size-4" />} title={"Open AI"} desc="GPT5 " badge={<Fbadge varient="blue">Code Generator</Fbadge >} />
-
-
-                    </div>
-
-
-                </div>
+                    </motion.div>
+                </motion.div>
 
 
 
 
-            </div>
+            </motion.div>
 
         </Card >
 

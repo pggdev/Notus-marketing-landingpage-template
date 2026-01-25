@@ -4,7 +4,11 @@
   --background: #ffffff;
   --foreground: #171717;
   --text-color: #f17463;
+  --blue-500: #3b82f6;
 }
+
+
+
 
 @theme inline {
   --color-background: var(--background);
@@ -12,6 +16,7 @@
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
   --color-primary: var(--text-color);
+  --color-blue-500: var(--blue-500);
 
 
   --animate-orbit: orbit var(--duration) linear infinite;
@@ -40,12 +45,6 @@
 
 
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
 
 body {
   background: var(--background);

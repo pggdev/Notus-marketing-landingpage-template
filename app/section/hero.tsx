@@ -8,7 +8,7 @@ export const Hero = () => {
         <Container className="my-auto relative">
             <div className="absolute h-full w-px bg-neutral-200"></div>
             <div className="absolute right-0 h-full w-px bg-neutral-200"></div>
-            <div className="flex flex-col gap-4 justify-center items-center pt-28 pb-23  ">
+            <div className="flex flex-col gap-4 justify-center items-center  pt-10 md:pt-28 pb-23  ">
 
                 <h1 className="text-sm font-normal text-primary">For fast moving engineering teams</h1>
                 <h1 className="text-6xl font-normal text-black font-sans text-center tracking-tight leading-15">Manage and simulate <br /> agentic <span className="text-primary">workflows</span></h1>

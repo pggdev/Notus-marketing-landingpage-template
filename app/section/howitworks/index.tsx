@@ -56,7 +56,7 @@ export const Integrate = () => {
         intervalRef.current = setInterval(() => {
             currentIndexRef.current = (currentIndexRef.current + 1) % Tabsitems.length;
             setSelectedTab(Tabsitems[currentIndexRef.current])
-        }, 10000)
+        }, 5000)
 
     }
 
@@ -122,15 +122,19 @@ export const Integrate = () => {
                     </Card>
                 </div>
 
-                <div>
+                <div className="-z-10 h-full w-full bg-white bg-[radial-gradient(#e5e7eb_1px,transparent_1px)] [background-size:10px_10px] mask-radial-from-50%">
+
+
                     {selectedTab.component}
+
+
 
                 </div>
 
             </div>
 
 
-        </Container>
+        </Container >
 
-    </div>
+    </div >
 }

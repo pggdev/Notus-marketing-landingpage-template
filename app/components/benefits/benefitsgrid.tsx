@@ -70,8 +70,13 @@ const Midcard = () => {
                         <div>
                             <IconCard icon={<IconBrandOpenai />} className="shadow-md" />
                         </div>
-                        <div>
-                            <IconCard icon={<IconCircle />} className="p-5 shadow-md" />
+                        <div className=" size-17  rounded-md p-px flex justify-center items-center overflow-hidden relative">
+
+                            <div className="w-full h-full absolute inset-0 [background-image:conic-gradient(from_0deg_at_50%_50%,transparent_0deg,#3b82f6_72deg,transparent_108deg)] scale-[1.4] animate-spin "></div>
+                            <div className="w-full h-full absolute inset-0 [background-image:conic-gradient(from_0deg_at_50%_50%,transparent_0deg,#f17463_72deg,transparent_108deg)] scale-[1.4] animate-spin [animation-delay:1.4s]"></div>
+                            <IconCard icon={<IconCircle />} className=" p-5 rounded-[3px] z-20 " />
+
+
                         </div>
                         <div>
                             <IconCard icon={<IconBrandSlack />} className="shadow-md" />

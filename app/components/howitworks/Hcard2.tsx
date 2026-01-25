@@ -3,12 +3,50 @@ import { Fbadge } from "@/app/section/features/badge"
 import { Subheading } from "../subheading"
 import { IconCard } from "@/app/section/features/card3/iconCard"
 import { Card } from "../features/card"
+import { motion } from "motion/react"
+
+
+const containerVariants = {
+    hidden: {},
+    visible: {
+        transition: {
+            staggerChildren: 0.2,
+        },
+    },
+};
+
+const itemVariants = {
+    hidden: {
+        opacity: 0,
+        y: -10,
+        filter: "blur(8px)"
+    },
+    visible: {
+        opacity: 1,
+        y: 0,
+        filter: "blur(0px)",
+        transition: {
+            duration: 0.4
+        }
+    },
+};
+
 
 export const Hcard2 = () => {
-    return <div className="">
-        <Card className=" h-110 overflow-hidden flex items-center">
+    return <motion.div
 
-            <div className="w-80 h-75 absolute -left-15 ">
+        className="">
+        <motion.div
+
+            variants={containerVariants}
+            initial="hidden"
+            animate="visible"
+            className=" h-110 flex items-center relative">
+
+            <motion.div
+                variants={itemVariants}
+
+                className="w-80 h-75 absolute -left-15 ">
                 <div className="w-full h-full rounded-xl shadow-md bg-white px-3.5 border border-neutral-200 ">
 
                     <div className="absolute -right-5 -top-5">
@@ -32,13 +70,17 @@ export const Hcard2 = () => {
 
                     </div>
                 </div>
-            </div>
+            </motion.div>
 
 
 
 
 
-            <div className="w-80 h-75 absolute -right-15 ">
+            <motion.div
+
+                variants={itemVariants}
+
+                className="w-80 h-75 absolute -right-15  ">
                 <div className="w-full h-full rounded-xl shadow-md bg-white px-3.5 border border-neutral-200 ">
 
                     <div className="absolute -left-5 -top-5">
@@ -97,12 +139,12 @@ export const Hcard2 = () => {
 
                     </div>
                 </div>
-            </div>
+            </motion.div>
 
 
 
 
-        </Card>
+        </motion.div>
 
-    </div>
+    </motion.div>
 }

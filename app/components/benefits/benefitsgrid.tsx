@@ -1,3 +1,5 @@
+'use client'
+
 import { IconPhone, IconDatabase, IconWallet, IconRocket, IconRocketOff, IconRefresh, IconGraph, IconBrandOpenai, IconBrandSlack, IconCircle, IconBell } from "@tabler/icons-react"
 
 import { FeatureCard } from "../useCases/usecasecards"
@@ -6,7 +8,9 @@ import { IconCard } from "@/app/section/features/card3/iconCard"
 import { Fbadge } from "@/app/section/features/badge"
 import { Balls } from "@/app/section/features/balls"
 import { cn } from "@/app/lib/utils"
-import { Topsvg } from "@/app/section/benefits/svgs/svgs"
+import { Bottomsvg, Topsvg } from "@/app/section/benefits/svgs/svgs"
+import { useState, useEffect } from "react"
+import { motion, AnimatePresence } from "motion/react"
 
 
 
@@ -65,9 +69,14 @@ const Midcard = () => {
     return <div>
         <Card className="h-148">
             <div className="bg-neutral-50 rounded-xl h-full" >
-                <div className="h-[50%] flex justify-center items-center px-6 relative">
+                <div className={cn("h-[50%] flex justify-center items-center px-6 relative",
+                    " bg-neutral-100 bg-[radial-gradient(#e5e7eb_1px,transparent_1px)] [background-size:10px_10px] mask-radial-from-20%  "
+                )}>
+                    <div className="absolute -bottom-10">
+                        <Bottomsvg />
+                    </div>
 
-                    <div className=" flex justify-between w-full items-center relative">
+                    <div className=" flex justify-between w-full items-center relative ">
                         <div className="z-10">
                             <IconCard icon={<IconBrandOpenai />} className="shadow-md" />
                         </div>
@@ -85,8 +94,12 @@ const Midcard = () => {
                         </div>
                     </div>
 
-                    <div className="absolute bottom-0">
-                        <Fbadge varient="blue">connected</Fbadge>
+                    <div className=" absolute bottom-0  ">
+
+                        <div className="w-full h-full flex flex-col justify-center items-center">
+                            <Fbadge varient="blue" >connected</Fbadge>
+
+                        </div>
                     </div>
                 </div>
 
@@ -95,7 +108,7 @@ const Midcard = () => {
                         <div className="bg-white px-4 py-6.5 border border-neutral-300/50 rounded-tl-md flex  gap-40 items-center">
 
                             <Balls ballSize="p-1" />
-                            <Notification title="Meeting Created" />
+                            <Notification />
 
                         </div>
 
@@ -110,7 +123,7 @@ const Midcard = () => {
                                     </div>
                                     <div className="flex flex-col gap-0.5">
                                         <h1 className=" text-neutral-400 text-sm pb-1">Success Rate</h1>
-                                        <Slider />
+                                        <Slider delay={0.1} />
                                     </div>
                                     <div className="flex flex-col gap-0.5">
                                         <h1 className=" text-neutral-400 text-sm pb-1">Workflows</h1>
@@ -132,36 +145,73 @@ const Midcard = () => {
             </div>
 
 
-        </Card>
-    </div>
+        </Card >
+    </div >
 }
 
 
 
-const Slider = ({ sliderlength }: { sliderlength?: string }) => {
+const Slider = ({ sliderlength, delay }: { sliderlength?: string, delay?: number }) => {
     return <div className="">
         <div className=" rounded-2xl  bg-neutral-50 p-0.75 relative">
-            <div className={cn("rounded-2xl bg-neutral-300 p-0.75 absolute inset-0 right-30", sliderlength)}>
+            <motion.div
+
+                initial={{ width: "0%" }}
+                whileInView={{ width: "60%" }}
+                transition={{
+                    duration: 1.4,
+                    ease: "linear",
+                    delay: delay
+                }}
+
+                className={cn("rounded-2xl bg-neutral-300 p-0.75 absolute inset-0 right-30", sliderlength)}>
 
 
-            </div>
+            </motion.div>
 
         </div>
 
-    </div>
+    </div >
 }
 
 
-const Notification = ({
-    title
-}: {
-    title: string
-}) => {
-    return <div className="flex">
-        <div className="px-1.5 py-1 flex items-center gap-1 border border-neutral-200 shadow-md rounded-sm">
-            <IconBell className="size-3 text-neutral-500" />
-            <h1 className="text-xs text-neutral-400">{title}</h1>
+
+const NOTIFICATION_TEXTS = [
+    "Meeting Created",
+    "Workflow Started",
+    "Data Synced",
+    "Task Completed",
+];
+
+
+const Notification = () => {
+    const [index, setIndex] = useState(0);
+
+    useEffect(() => {
+        const interval = setInterval(() => {
+            setIndex((prev) => (prev + 1) % NOTIFICATION_TEXTS.length);
+        }, 3000);
+        return () => clearInterval(interval);
+    }, []);
+
+    return (
+        <div className="flex h-7 items-center justify-center">
+            <AnimatePresence mode="wait">
+                <motion.div
+
+                    key={index}
+                    initial={{ opacity: 0, scale: 0.95, y: -10 }}
+                    animate={{ opacity: 1, scale: 1, y: 0 }}
+                    exit={{ opacity: 0, scale: 0.95, y: 10 }}
+                    transition={{ duration: 0.3, ease: "easeIn" }}
+                    className="px-1.5 py-1 flex items-center gap-1 border border-neutral-200 shadow-md rounded-sm bg-white overflow-hidden min-w-[120px]"
+                >
+                    <IconBell className="size-3 text-neutral-500 shrink-0" />
+                    <h1 className="text-xs text-neutral-400 whitespace-nowrap">
+                        {NOTIFICATION_TEXTS[index]}
+                    </h1>
+                </motion.div>
+            </AnimatePresence>
         </div>
-
-    </div>
-}
+    );
+};
